@@ -34,12 +34,16 @@ program.parse(process.argv);
 program.config = path.normalize(path.join(process.cwd(), program.config));
 
 // load config
-try {
-    require(program.config);
-    runner.log.info('config file: ' + runner.log.colors.green(program.config));
-} catch ( error ) {
-    runner.log.fail('config file %s was not found!', runner.log.colors.bold(program.config));
-}
+require(program.config);
+runner.log.info('config file: ' + runner.log.colors.green(program.config));
+
+// try {
+//     require(program.config);
+//     runner.log.info('config file: ' + runner.log.colors.green(program.config));
+// } catch ( error ) {
+//     console.log(error);
+//     runner.log.fail('config file %s was not found!', runner.log.colors.bold(program.config));
+// }
 
 // run
 if ( program.args.length === 1 ) {
