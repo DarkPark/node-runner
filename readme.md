@@ -44,6 +44,12 @@ runner.log.warn('warning message');
 runner.log.fail('error');
 ```
 
+Access [colors](https://www.npmjs.com/package/colors) instance:
+
+```js
+runner.log.info(runner.log.colors.black.bgYellow('black text on yellow background'));
+````
+
 Some task specific output:
 
 ```js
