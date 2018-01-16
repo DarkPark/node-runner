@@ -31,11 +31,17 @@ var runner = require('node-runner');
 
 ### Logging ###
 
-General output:
+General output in different colors:
 
 ```js
 // 16:25:30.811 simple line
 runner.log.info('simple line');
+
+// 16:25:30.811 warning message
+runner.log.warn('warning message');
+
+// 16:25:30.811 error
+runner.log.fail('error');
 ```
 
 Some task specific output:
