@@ -9,7 +9,7 @@
 
 var path    = require('path'),
     program = require('commander'),
-    debug   = require('debug')('cli'),
+    //debug   = require('debug')('cli'),
     runner  = require('../lib/main'),
     pkgData = require('../package.json');
 
