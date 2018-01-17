@@ -42,13 +42,16 @@ runner.log.warn('warning message');
 
 // 16:25:30.811 error
 runner.log.fail('error');
+
+// print some complex data
+runner.log.inspect(someObject);
 ```
 
 Access [colors](https://www.npmjs.com/package/colors) instance:
 
 ```js
 runner.log.info(runner.log.colors.black.bgYellow('black text on yellow background'));
-````
+```
 
 Some task specific output:
 
@@ -57,6 +60,50 @@ var log = runner.log.wrap('webpack');
 
 // 16:25:30.811 [webpack] build is ok
 log.info('build is ok');
+```
+
+
+### Helpers ###
+
+```js
+var tools = require('node-runner/lib/tools');
+```
+
+Remove some generated files:
+
+```js
+tools.unlink(['build/develop/main.css', 'build/develop/main.js'], log, function ( error ) {
+    console.log(error);    
+});
+```
+
+Write generated files content:
+
+```js
+tools.write([{name: 'build/develop/main.js', data: someContent}], log, function ( error ) {
+    console.log(error);    
+});
+```
+
+Create new directories and any necessary subdirectories:
+
+```js
+tools.mkdir(['build/develop', 'build/release'], log, function ( error ) {
+    console.log(error);    
+});
+```
+
+### Modules ###
+
+Activate system popup notifications on errors:
+
+```js
+require('node-runner/lib/notify');
+```
+
+Add system task `status` to get all tasks running state:
+```js
+require('node-runner/lib/status');
 ```
 
 

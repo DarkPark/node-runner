@@ -23,7 +23,8 @@
         "cjs-runner": "1.*.*",
         "chokidar": "1.*.*",
         "colors": "1.*.*",
-        "debug": "3.*.*"
+        "node-notifier": "5.*.*",
+        "strip-ansi": "4.*.*"
     },
     "devDependencies": {
         "eslint": "4.*.*",
