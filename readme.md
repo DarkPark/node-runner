@@ -50,7 +50,11 @@ runner.log.inspect(someObject);
 Access [colors](https://www.npmjs.com/package/colors) instance:
 
 ```js
-runner.log.info(runner.log.colors.black.bgYellow('black text on yellow background'));
+var colors = runner.log.colors;
+
+runner.log.info(
+    colors.black.bgYellow('black text on yellow background')
+);
 ```
 
 Some task specific output:
@@ -72,25 +76,37 @@ var tools = require('node-runner/lib/tools');
 Remove some generated files:
 
 ```js
-tools.unlink(['build/develop/main.css', 'build/develop/main.js'], log, function ( error ) {
-    console.log(error);    
-});
+tools.unlink(
+    ['build/develop/main.css', 'build/develop/main.js'],
+    log,
+    function ( error ) {
+        console.log(error);    
+    }
+);
 ```
 
 Write generated files content:
 
 ```js
-tools.write([{name: 'build/develop/main.js', data: someContent}], log, function ( error ) {
-    console.log(error);    
-});
+tools.write(
+    [{name: 'build/develop/main.js', data: someContent}],
+    log,
+    function ( error ) {
+        console.log(error);    
+    }
+);
 ```
 
 Create new directories and any necessary subdirectories:
 
 ```js
-tools.mkdir(['build/develop', 'build/release'], log, function ( error ) {
-    console.log(error);    
-});
+tools.mkdir(
+    ['build/develop', 'build/release'],
+    log,
+    function ( error ) {
+        console.log(error);    
+    }
+);
 ```
 
 ### Modules ###

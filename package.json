@@ -23,6 +23,7 @@
         "cjs-runner": "1.*.*",
         "chokidar": "1.*.*",
         "colors": "1.*.*",
+        "commander": "2.*.*",
         "node-notifier": "5.*.*",
         "strip-ansi": "4.*.*"
     },
