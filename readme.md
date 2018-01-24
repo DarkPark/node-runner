@@ -10,8 +10,10 @@ Task runner
 
 ## Installation ##
 
+Can be local or global.
+
 ```bash
-npm install node-runner
+npm install node-runner --global
 ```
 
 
