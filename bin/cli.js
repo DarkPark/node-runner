@@ -33,8 +33,8 @@ program.parse(process.argv);
 program.config = path.normalize(path.join(process.cwd(), program.config));
 
 // load config
-require(program.config);
 runner.log.info('config file: ' + runner.log.colors.green(program.config));
+require(program.config);
 
 // run
 if ( program.args.length === 1 ) {
